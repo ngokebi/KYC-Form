@@ -1,0 +1,383 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="bootstrap-5.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="bootstrap-5.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/
+     jquery/3.3.1/jquery.min.js">
+    </script>
+</head>
+<style>
+    .logo {
+        background-image: url("Image.jpg");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: cover;
+        height: 450px;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .welcome {
+        font-size: 70px;
+        padding-top: 10%;
+        padding-left: 5%;
+        color: #59595D;
+    }
+
+    .article {
+        margin-left: 5%;
+        font-size: 30px;
+        margin-top: 7%;
+        margin-bottom: 7%;
+        color: #59595D;
+    }
+
+    footer {
+        background-color: #59595d;
+        position: relative;
+        padding: 50px 0px 50px 0px;
+        height: 100px;
+        color: white;
+        text-align: center;
+    }
+
+    header {
+
+        padding: 2% 7% 2% 14%;
+        color: white;
+    }
+
+    img {
+        width: 200px;
+        height: 111px;
+
+    }
+
+    form {
+        padding-left: 20%;
+    }
+
+    .formText {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 5% 0% 5% 0%;
+        color: #59595D;
+    }
+
+    #inputHeight {
+        height: 70px;
+
+    }
+
+    #inputSelect {
+        height: 70px;
+        color: #DFDFDF;
+        font-size: 20px;
+        padding-left: 50px;
+        border: none;
+        outline-width: 0;
+    }
+
+    #inputDate {
+        height: 70px;
+        color: #DFDFDF;
+        font-size: 20px;
+    }
+
+    .form-control::-webkit-input-placeholder {
+        color: #DFDFDF !important;
+        opacity: 1 !important;
+        font-size: 20px;
+        padding-left: 40px;
+    }
+
+    option {
+        color: #DFDFDF !important;
+        opacity: 1 !important;
+        font-size: 20px;
+
+    }
+
+    input {
+        background-color: transparent;
+        border: 0px solid !important;
+        background-color: #ccc;
+        /* font-family: "Century Gothic"; */
+        color: grey !important;
+        opacity: 1 !important;
+    
+    }
+
+    .form-control:focus {
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .form-select:focus {
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    /* #image-upload>input {
+        display: none;
+
+    } */
+
+    #labels {
+        padding-left: 50px;
+        font-size: 25px;
+        padding-bottom: 10px;
+    }
+
+    /* #divSpace {
+        padding-bottom: 40px;
+    } */
+
+    button {
+        margin-left: 14%;
+        margin-top: 2%;
+        background-color: #FF6600;
+        color: #ccc;
+        border: none;
+        color: white;
+        padding: 3% 30%;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 24px;
+        border-radius: 12px;
+        margin-bottom: 6%;
+        margin-top: 100px;
+    }
+
+    .custom-file-upload {
+        border: 3px solid white;
+        display: inline-block;
+        padding-bottom: 50px;
+        padding-top: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        cursor: pointer;
+        height: 90%;
+        width: 100%;
+        font-size: 30px;
+        text-align: center;
+        background-color: transparent;
+        color: #DFDFDF !important;
+        opacity: 1 !important;
+    }
+</style>
+
+<body>
+
+
+    <header>
+        <!-- <div class="container">
+            <div class="row"> -->
+        <img src="Page logo.png">
+        <!-- </div>
+        </div> -->
+    </header>
+    <div class="container">
+        <div class="row">
+            <section class="logo">
+                <div class="col-12">
+                    <p class="welcome">Welcome to <strong><b>Page <br> Financials</b></strong></p>
+                </div>
+            </section>
+            <div class="row">
+                <p class="article">
+                    Page is a leading financial services provider, enabling thousands of Nigerians stay in <br>
+                    control of their financial life. We have partnered with the Nigerian Medical Association <br>
+                    (NMA) for the production digital-powered Identity card which will also double as a debit <br>
+                    card for all members; the debit card can be used for financials transactions on POS, ATM <br>
+                    and Web payment platform Nationwide. The card will also give you access to Page's wide <br>
+                    array of financial products that Page offers like salary advance, overdrafts, digital wallet <br>
+                    with zero transactions charge, to mention a few.
+                </p>
+            </div>
+            <div class="container" style="background-color: #F8F8F8;">
+                <div class="row">
+                    <p class="formText">Please enter the correct details below to enter into world of <br>
+                        financial freedom with your digitalized NMA ID Card.</p>
+                </div>
+                <div class="col-10">
+                    <form class="row g-3" method="post" action="insert.php" enctype="multipart/form-data" id="basic-form">
+                        <div class="col-12" id="divSpace">
+                            <label for="name" class="form-label" id="labels"><strong>FULL NAME</strong></label>
+                            <input type="text" name="surname" class="form-control" id="inputHeight" value=""
+                                placeholder="Surname">
+                            <br>
+                            <input type="text" name="middle_name" class="form-control" id="inputHeight"
+                                placeholder="Middle Name">
+                            <br>
+                            <input type="text" name="first_name" class="form-control" id="inputHeight"
+                                placeholder="First Name">
+                        </div>
+
+                        <div class="col-12" id="divSpace">
+                            <label for="inputAddress" class="form-label" id="labels"><strong>CONTACT
+                                    DETAILS</strong></label>
+                            <input type="email" name="email" class="form-control" id="inputHeight" placeholder="Email">
+
+                            <br>
+                            <input type="text" name="phone_number" class="form-control" id="inputHeight"
+                                placeholder="Phone Number">
+                            <br>
+                            <input type="address" name="address" class="form-control" id="inputHeight"
+                                placeholder="Address">
+
+                        </div>
+                        <div class="col-12" id="divSpace">
+                            <label for="personal_details" class="form-label" id="labels"><strong>PERSONAL
+                                    DETAILS</strong></label>
+                            <input type="text" class="form-control" placeholder="Date of Birth" name="dob"
+                                onfocus="(this.type='date')" style="height: 70px; color: #DFDFDF; font-size: 20px;"><br>
+                            <select id="inputSelect" class="form-select" name="gender">
+                                <option value="">Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                            <br>
+                            <select id="idtype" class="form-select" name="identification"
+                                style=" height: 70px; color: #DFDFDF; font-size: 20px; padding-left: 50px; border:none; outline-width: 0;">
+                                <option value="">Means of Identification</option>
+                                <option value="npassport">National Passport</option>
+                                <option value="voterscard">Voters Card</option>
+                                <option value="dlicense">Drivers License</option>
+                                <option value="nin">NIN</option>
+                            </select><br>
+                            <input type="text" class="form-control" id="inputHeight" name="idnumber"
+                                placeholder="Identification Number"><br>
+                            <div id="mycustissuedate" style="display: none;">
+                                <input type="text" class="form-control" placeholder="Issued Date" name="issuedate"
+                                    onfocus="(this.type='date')"
+                                    style="height: 70px; color: #DFDFDF; font-size: 20px;"><br>
+                            </div>
+                            <div id="mycustexpdate" style="display: none;">
+                                <input type="text" class="form-control" placeholder="Expiry Date" name="expdate"
+                                    onfocus="(this.type='date')" style="height: 70px; color: #DFDFDF; font-size: 20px;">
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-12" id="divSpace">
+                            <label for="inputCity" class="form-label" id="labels"><strong>EMPLOYMENT
+                                    DETAILS</strong></label>
+                            <!-- <input type="text" class="form-control" id="inputHeight" name="epname"
+                                placeholder="Employer/Parastatal Name"><br> -->
+                            <input type="text" class="form-control" id="inputHeight" name="employer"
+                                placeholder="Employer/Parastatal Name"><br>
+                            <input type="text" class="form-control" id="inputHeight" name="eaddress"
+                                placeholder="Employer's Address"><br>
+                            <input type="text" class="form-control" id="inputHeight" name="onumber"
+                                placeholder="Oracle Number"><br>
+                            <input type="text" class="form-control" id="inputHeight" name="ippisnumber"
+                                placeholder="IPPIS Number"><br>
+                            <input type="text" class="form-control" id="inputHeight"
+                                placeholder="Bank Verification Number"><br>
+                            <input type="text" class="form-control" id="inputHeight" name="nmanumber"
+                                placeholder="NMA Number">
+                        </div>
+
+                        <!-- <div class="row g-3" id="divSpace">
+                            <label for="uploads" id="labels"><strong>UPLOADS</strong></label>
+                            <div class="col">
+                                <label for="inputZip" class="form-label">Govt. Issued ID Card: </label>
+                                <input type="file" class="form-control" placeholder="Govt. Issued ID Card">
+
+                            </div>
+                            <div class="col">
+                                <label for="inputZip" class="form-label">Passport Photo: </label>
+                                <input type="file" class="form-control" placeholder="Govt. Issued ID Card">
+                            </div>
+
+                        </div> -->
+
+                        <div class="row" style="display: block;">
+                            <div class="row g-3">
+                                <label for="uploads" id="labels"><strong>UPLOADS</strong></label>
+                                <div class="col" id="image-upload">
+                                    <label for="file-upload" class="custom-file-upload">
+                                        Govt. Issued ID - <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                    </label>
+                                    <input id="file-upload" name='govtid' type="file" style="display:none;">
+                                </div>
+                                <br>
+                                <div class="col" id="image-upload">
+                                    <label for="file-upload2" class="custom-file-upload">
+                                        Passport - <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                    </label>
+                                    <input id="file-upload2" name='passport' type="file" style="display:none;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" name="submit"><strong>SUBMIT</strong></button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <p style="text-align: center;"><strong>&copy; PAGE INTERNATIONAL FINANCIAL SERVICES
+                        LIMITED&trade;</strong></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        $('#file-upload').change(function () {
+            var i = $(this).prev('label').clone();
+            var file = $('#file-upload')[0].files[0].name;
+            $(this).prev('label').text(file);
+        });
+
+        $('#file-upload2').change(function () {
+            var i = $(this).prev('label').clone();
+            var file = $('#file-upload2')[0].files[0].name;
+            $(this).prev('label').text(file);
+        });
+
+        $('#idtype').change(function (e) {
+
+            if ($('#idtype').val() == 'dlicense' || $('#idtype').val() == 'npassport') {
+                $('#mycustissuedate').css('display', 'block');
+                $('#mycustexpdate').css('display', 'block');
+            } else {
+                $('#mycustissuedate').css('display', 'none');
+                $('#mycustexpdate').css('display', 'none');
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
