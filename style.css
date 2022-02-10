@@ -1,0 +1,233 @@
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-select:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#labels {
+  padding-left: 50px;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.formText {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5% 0% 5% 0%;
+  color: #59595d;
+}
+
+.form-control {
+  height: 70px;
+}
+
+.form-select {
+  height: 70px;
+  color: #dfdfdf;
+  font-size: 20px;
+  padding-left: 50px;
+  border: none;
+  outline-width: 0;
+}
+
+#inputDate {
+  height: 70px;
+  color: #dfdfdf;
+  font-size: 20px;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #dfdfdf !important;
+  opacity: 1 !important;
+  /* font-size: 20px;
+    padding-left: 40px; */
+}
+
+.logo {
+  background-image: url("Image.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  height: 450px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.welcome {
+  font-size: 70px;
+  padding-top: 10%;
+  padding-left: 5%;
+  color: #59595d;
+}
+
+.article {
+  margin-left: 5%;
+  font-size: 30px;
+  margin-top: 7%;
+  margin-bottom: 7%;
+  color: #59595d;
+}
+
+.custom-file-upload {
+  border: 3px solid white;
+  display: inline-block;
+  padding-bottom: 50px;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  cursor: pointer;
+  height: 90%;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  background-color: transparent;
+  color: #dfdfdf !important;
+  opacity: 1 !important;
+}
+
+#surnameErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#middle_nameErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#first_nameErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#emailErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#phone_numberErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#addressErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#dobErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#genderErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#identificationErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#idnumberErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#issuedateErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#expdateErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#employerErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#eaddressErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#onumberErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#ippisnumberErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#bvnErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#nmanumberErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#govtidErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}
+
+#passportErr {
+  font-size: 12px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-top: 5px !important;
+}

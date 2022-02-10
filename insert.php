@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
     $employeraddress = $_POST['eaddress'];
     $oraclenumber = $_POST['onumber'];
     $ippisnumber = $_POST['ippisnumber'];
+    $bvn = $_POST['bvn'];
     $nmanumber = $_POST['nmanumber'];
     $govtid = $_FILES["govtid"]['name'];
     $govtid_tmp = $_FILES["govtid"]['tmp_name'];
@@ -31,14 +32,10 @@ if (isset($_POST['submit'])) {
     $passport_tmp = $_FILES["passport"]['tmp_name'];
 
 
-    if (
-        !empty($surname) && !empty($middlename) && !empty($firstname) && !empty($email) && !empty($phonenumber) && !empty($address) && !empty($dob) && !empty($gender) && !empty($identification)
-        && !empty($identitynumber) && !empty($employername) && !empty($employeraddress) && !empty($oraclenumber) && !empty($ippisnumber) && !empty($nmanumber) && !empty($govtid) && !empty($passport)
-    ) {
         if (empty($issuedate) && empty($expiredate)) {
             
             $issuedate = 0000 - 00 - 00;
-            $expiredate = 0000 - 00 - 00; {
+            $expiredate = 9999 - 99 - 99; {
 
                 $uploadLocation = "images/";
 
@@ -69,6 +66,7 @@ if (isset($_POST['submit'])) {
                     $employeraddress,
                     $oraclenumber,
                     $ippisnumber,
+                    $bvn,
                     $nmanumber,
                     $govtid,
                     $passport
@@ -107,6 +105,7 @@ if (isset($_POST['submit'])) {
                 $employeraddress,
                 $oraclenumber,
                 $ippisnumber,
+                $bvn,
                 $nmanumber,
                 $govtid,
                 $passport
@@ -115,9 +114,5 @@ if (isset($_POST['submit'])) {
             exit();
         }
     } 
-    else {
-        
-        header("location: form.html");
-        exit();
-    }
-}
+
+

@@ -41,28 +41,6 @@ class Database
         return self::$stmt->execute();
     }
 
-    // Upload Image
-
-    static public function save_image($dir, $file)
-    {
-        try {
-            $extention = explode(".", $_FILES[$file]["name"]);
-            $extention = $extention[count($extention) - 1];
-            $url = $dir . uniqid(rand() . "." . $extention);
-
-            if (in_array($extention, array("jpeg", "jpg", "png", "gif"))) {
-                if (is_uploaded_file($_FILES[$file]["tmp_name"])) {
-                    if (move_uploaded_file($_FILES[$file]["tmp_file"], $url)) {
-                        return self::$stmt->save_image($dir, $file);
-                    }
-                }
-            }
-        } catch (PDOException $exception) {
-
-            echo "Connection error: " . $exception->getMessage();
-        }
-    }
-
     static public function bindValue($param, $value, $type = null)
     {
         if (is_null($type)) {
