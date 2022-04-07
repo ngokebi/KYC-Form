@@ -1,63 +1,101 @@
 <?php
+class dbConnect {
+	
+    const user='root';
+	const pass='CHASE_suno1995';
+	const database='kycForm';
+	const server='localhost';
 
-require_once("config.php");
 
-class Database
-{
+	public $mysqli ='';	
+	public $dbh;
+	
+	function get_data($qry){
+		self::connect();
+		$rs= mysqli_query($this->mysqli,$qry) or die (mysqli_error($this->mysqli));
+		$s = array();
+		while ($row = mysqli_fetch_assoc($rs)) {
+			array_push($s,$row);
+			$dat = true;
+		}
+		mysqli_close($this->mysqli);
+		if (@$dat) {
+			return $s;
+		}else {
+			return false;
+		}
+	}
+	
+	function get_data_multi($qry) {
+		self::connect();
+		$rs = mysqli_multi_query($this->mysqli, $qry) or die (mysqli_error($this->mysqli));
+		$s = array();
+		do {
+	        if ($result = $this->mysqli->store_result()) {
+	            while ($row = $result->fetch_assoc()) {
+	               array_push($s,$row);
+	            }
+	            $result->free();
+	        }
+		}while ($this->mysqli->next_result());
+		mysqli_close($this->mysqli);
+		return $s;
+	}
+	
+	function __construct() {
+		self::connect();
+	}
 
-    static private $host = DB_SERVER;
-    static private $db_name = DB_NAME;
-    static private $username = DB_USERNAME;
-    static private $password = DB_PASSWORD;
-    static public $conn;
-    static public $stmt;
+     function insert_data($qry){
+		// echo $qry;
+     	self::connect();
+		$rs= mysqli_query($this->mysqli,$qry);
+		if ($rs) {
+			$retval = mysqli_insert_id($this->mysqli);
+			mysqli_close($this->mysqli);
+			return $retval;
+		}else {
+			mysqli_close($this->mysqli);
+			return false;
+		}
+		
+	}
+	
+	function executeProc($qry) {
+		self::connect();
+		if (!mysqli_query($this->mysqli,$qry)){
+			echo $this->mysqli->errno;
+		}
+		mysqli_close($this->mysqli);
+	}
+	
+	function makeSQLStrings($theValue) {
+		self::connect();
+		// $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+		$theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($this->mysqli,$theValue) : mysqli_escape_string($this->mysqli,$theValue);
+		$theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+		mysqli_close($this->mysqli);
+		return $theValue;
+	}
 
-    // get the database connection
-    static public function getConnection()
-    {
-
-        self::$conn = null;
-
-        try {
-            self::$conn = new PDO("mysql:host=" . self::$host . "; dbname=" . self::$db_name, self::$username, self::$password);
-            self::$conn->exec("set names utf8");
-        } catch (PDOException $exception) {
-
-            echo "Connection error: " . $exception->getMessage();
-        }
-
-        return self::$conn;
+    function connect() {
+        $this->mysqli = new mysqli(self::server, self::user, self::pass, self::database);
+		if ($this->mysqli->connect_errno) {
+			return false;
+		}else {
+			return true;
+		}
     }
-
-    // Prepare Statment
-    static public function query($query)
-    {
-        self::$stmt = self::$conn->prepare($query);
+    
+    function connectWebsite() {
+        $this->mysqli = new mysqli(self::websiteServer, self::websiteUser, self::websitePass, self::websiteDatabase);
+		if ($this->mysqli->connect_errno) {
+			echo $this->mysqli->connect_errno;
+			return false;
+		}else {
+			return true;
+		}
     }
-
-    // Execute Statment
-    static public function execute()
-    {
-        return self::$stmt->execute();
-    }
-
-    static public function bindValue($param, $value, $type = null)
-    {
-        if (is_null($type)) {
-            switch (true) {
-                case is_int($value):
-                    $type = PDO::PARAM_INT;
-                    break;
-                case is_bool($value):
-                    $type = PDO::PARAM_BOOL;
-                    break;
-                case is_null($value):
-                    $type = PDO::PARAM_NULL;
-                    break;
-                default:
-                    $type = PDO::PARAM_STR;
-            }
-        }
-        self::$stmt->bindValue($param, $value, $type);
-    }
+	
 }
+?>

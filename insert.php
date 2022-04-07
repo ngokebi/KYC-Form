@@ -1,10 +1,13 @@
 <?php
+ini_set('display_errors', '1');
 
-require_once("Database.php");
+ini_set('display_startup_errors', '1');
+
+error_reporting(E_ALL);
+
 require_once('classes.php');
 
-Database::getConnection();
-
+$KycForm = new KycForm();
 
 if (isset($_POST['submit'])) {
 
@@ -31,88 +34,40 @@ if (isset($_POST['submit'])) {
     $passport = $_FILES["passport"]['name'];
     $passport_tmp = $_FILES["passport"]['tmp_name'];
 
+    $uploadLocation = "images/";
 
-        if (empty($issuedate) && empty($expiredate)) {
-            
-            $issuedate = 0000 - 00 - 00;
-            $expiredate = 9999 - 99 - 99; {
+    if ($govtid) {
 
-                $uploadLocation = "images/";
+        move_uploaded_file($govtid_tmp, $uploadLocation . $govtid);
+    }
 
-                if ($govtid) {
+    if ($passport) {
 
-                    move_uploaded_file($govtid_tmp, $uploadLocation . $govtid);
-                }
+        move_uploaded_file($passport_tmp, $uploadLocation . $passport);
+    }
 
-                if ($passport) {
+    $KycForm->insert(
+        $surname,
+        $middlename,
+        $firstname,
+        $email,
+        $phonenumber,
+        $address,
+        $dob,
+        $gender,
+        $identification,
+        $identitynumber,
+        $issuedate,
+        $expiredate,
+        $employername,
+        $employeraddress,
+        $oraclenumber,
+        $ippisnumber,
+        $bvn,
+        $nmanumber,
+        $govtid,
+        $passport
+    );
 
-                    move_uploaded_file($passport_tmp, $uploadLocation . $passport);
-                }
-
-                KycForm::insert(
-                    $surname,
-                    $middlename,
-                    $firstname,
-                    $email,
-                    $phonenumber,
-                    $address,
-                    $dob,
-                    $gender,
-                    $identification,
-                    $identitynumber,
-                    $issuedate,
-                    $expiredate,
-                    $employername,
-                    $employeraddress,
-                    $oraclenumber,
-                    $ippisnumber,
-                    $bvn,
-                    $nmanumber,
-                    $govtid,
-                    $passport
-                );
-                header("location: form.html");
-                exit();
-            }
-        } else {
-
-            $uploadLocation = "images/";
-
-            if ($govtid) {
-
-                move_uploaded_file($govtid_tmp, $uploadLocation . $govtid);
-            }
-
-            if ($passport) {
-
-                move_uploaded_file($passport_tmp, $uploadLocation . $passport);
-            }
-
-            KycForm::insert(
-                $surname,
-                $middlename,
-                $firstname,
-                $email,
-                $phonenumber,
-                $address,
-                $dob,
-                $gender,
-                $identification,
-                $identitynumber,
-                $issuedate,
-                $expiredate,
-                $employername,
-                $employeraddress,
-                $oraclenumber,
-                $ippisnumber,
-                $bvn,
-                $nmanumber,
-                $govtid,
-                $passport
-            );
-            header("location: form.html");
-            exit();
-        }
-    } 
-
+} 
 
